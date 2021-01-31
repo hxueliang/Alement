@@ -20,6 +20,9 @@ export default {
   methods: {
     onInput(e) {
       this.$emit('input', e.target.value)
+
+      // 效验
+      this.$parent.$emit('validate')
     }
   }
 }

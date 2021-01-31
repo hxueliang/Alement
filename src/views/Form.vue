@@ -1,10 +1,10 @@
 <template>
   <div>
     <al-form :model="userInfo" :rules="rules">
-      <al-form-item label="用户名">
+      <al-form-item label="用户名" prop="userName">
         <al-input v-model="userInfo.userName" placeholder="请输入用户名"></al-input>
       </al-form-item>
-      <al-form-item label="密码">
+      <al-form-item label="密码" prop="userPwd">
         <al-input v-model="userInfo.userPwd" placeholder="请输入密码"></al-input>
       </al-form-item>
     </al-form>
