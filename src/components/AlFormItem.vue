@@ -35,7 +35,7 @@ export default {
       const value = this.form.model[this.prop]
 
       const schema = new Schema({ [this.prop]: rules })
-      schema.validate({ [this.prop]: value }, errors => {
+      return schema.validate({ [this.prop]: value }, errors => {
         if (errors) {
           this.error = errors[0].message
         } else {

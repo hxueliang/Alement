@@ -19,6 +19,17 @@ export default {
     rules: {
       type: Object
     }
+  },
+  methods: {
+    validate(cb) {
+      const results = this.$children
+        .filter(item => item.prop)
+        .map(item => item.validate())
+
+      Promise.all(results)
+        .then(() => cb(true))
+        .catch(() => cb(false))
+    }
   }
 }
 </script>
