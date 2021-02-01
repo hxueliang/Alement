@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import create from '@/utils/create'
 
-Vue.prototype.$create = create
+Vue.use(create)
 
 Vue.config.productionTip = false
 

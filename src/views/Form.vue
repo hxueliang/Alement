@@ -24,7 +24,6 @@
 import AlInput from '@/components/AlInput'
 import AlFormItem from '@/components/AlFormItem'
 import AlForm from '@/components/AlForm'
-import Notice from '@/components/Notice'
 
 export default {
   components: {
@@ -54,7 +53,7 @@ export default {
         // } else {
         //   console.error('验证没通过！！')
         // }
-        const notice = this.$create(Notice, {
+        const notice = this.$notice({
           title: '来来来',
           message: valid ? '请求登录...' : '校验失败！！',
           duration: 1000

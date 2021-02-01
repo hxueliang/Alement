@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Notice from '@/components/Notice'
 
 function create(Component, props) {
   const vm = new Vue({
@@ -19,4 +20,10 @@ function create(Component, props) {
   return comp
 }
 
-export default create
+export default {
+  install(Vue) {
+    Vue.prototype.$notice = function(options) {
+      return create(Notice, options)
+    }
+  }
+}
