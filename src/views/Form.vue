@@ -24,6 +24,7 @@
 import AlInput from '@/components/AlInput'
 import AlFormItem from '@/components/AlFormItem'
 import AlForm from '@/components/AlForm'
+import Notice from '@/components/Notice'
 
 export default {
   components: {
@@ -47,12 +48,18 @@ export default {
   },
   methods: {
     goLogin() {
-      this.$refs.loginRef.validate(res => {
-        if (res) {
-          alert('submit')
-        } else {
-          console.error('验证没通过！！')
-        }
+      this.$refs.loginRef.validate(valid => {
+        // if (valid) {
+        //   alert('submit')
+        // } else {
+        //   console.error('验证没通过！！')
+        // }
+        const notice = this.$create(Notice, {
+          title: '来来来',
+          message: valid ? '请求登录...' : '校验失败！！',
+          duration: 1000
+        })
+        notice.show()
       })
     }
   }
